@@ -3,28 +3,46 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta http-equiv='cache-control' content='no-cache'>
+	<meta http-equiv='expires' content='0'>
+	<meta http-equiv='pragma' content='no-cache'>
+	
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Effective Wait</title>
-	<!-- core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/owl.carousel.css" rel="stylesheet">
-    <link href="css/owl.transitions.css" rel="stylesheet">
-    <link href="css/prettyPhoto.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
+	<!-- core CSS -->    
+	<link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/font-awesome.min.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/animate.min.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/owl.carousel.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/owl.transitions.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/prettyPhoto.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/responsive.css" />" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
-    <![endif]-->       
-    <link rel="shortcut icon" href="images/ico/favicon.ico"/>
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <![endif]-->  
+    <script>
+    function initMap() {
+        var uluru = {lat: 40.444158, lng: -74.505065};
+        var map = new google.maps.Map(document.getElementById('google-map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+         
+    <link rel="shortcut icon" href="<c:url value="/resources/images/ico/favicon.ico" />">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<c:url value="/resources/images/ico/apple-touch-icon-144-precomposed.png" />">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<c:url value="/resources/images/ico/apple-touch-icon-114-precomposed.png" />">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<c:url value="/resources/images/ico/apple-touch-icon-72-precomposed.png"/>">
+    <link rel="apple-touch-icon-precomposed" href="<c:url value="/resources/images/ico/apple-touch-icon-57-precomposed.png"/>">
 </head><!--/head-->
 
 <body id="home" class="homepage">
@@ -39,7 +57,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="<c:url value="images/logo.png" /> alt="logo"></a>
+                    <a class="navbar-brand" href="index.html"><img alt="logo" src="<c:url value="/resources/images/logo.png"/>"></a>
                 </div>
 				
                 <div class="collapse navbar-collapse navbar-right">
@@ -64,7 +82,7 @@
 
     <section id="main-slider">
         <div class="owl-carousel">
-            <div class="item" style="background-image: url(images/slider/bg1.jpg);">
+            <div class="item" style="background-image: url(<c:url value="/resources/images/slider/bg1.jpg" />);">
                 <div class="slider-inner">
                     <div class="container">
                         <div class="row">
@@ -79,7 +97,7 @@
                     </div>
                 </div>
             </div><!--/.item-->
-             <div class="item" style="background-image: url(images/slider/bg2.jpg);">
+             <div class="item" style="background-image: url(<c:url value="/resources/images/slider/bg2.jpg"/>);">
                 <div class="slider-inner">
                     <div class="container">
                         <div class="row">
@@ -120,7 +138,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-6 wow fadeInLeft">
-                    <img class="img-responsive" src="images/main-feature.png" alt="">
+                    <img class="img-responsive" src="<c:url value="/resources/images/main-feature.png" />" alt="">
                 </div>
                 <div class="col-sm-6">
                     <div class="media service-box wow fadeInRight">
@@ -173,7 +191,7 @@
                 <h2 class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms"><span>MULTI</span> IS A CREATIVE HTML TEMPLATE</h2>
                 <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">Mauris pretium auctor quam. Vestibulum et nunc id nisi fringilla <br />iaculis. Mauris pretium auctor quam.</p>
                 <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms"><a class="btn btn-primary btn-lg" href="#">Free Download</a></p>
-                <img class="img-responsive wow fadeIn" src="images/cta2/cta2-img.png" alt="" data-wow-duration="300ms" data-wow-delay="300ms">
+                <img class="img-responsive wow fadeIn" src="<c:url value="/resources/images/cta2/cta2-img.png" />" alt="" data-wow-duration="300ms" data-wow-delay="300ms">
             </div>
         </div>
     </section>
@@ -283,88 +301,88 @@
             <div class="portfolio-items">
                 <div class="portfolio-item creative">
                     <div class="portfolio-item-inner">
-                        <img class="img-responsive" src="images/portfolio/01.jpg" alt="">
+                        <img class="img-responsive" src="<c:url value="/resources/images/portfolio/01.jpg" />" alt="">
                         <div class="portfolio-info">
                             <h3>Portfolio Item 1</h3>
                             Lorem Ipsum Dolor Sit
-                            <a class="preview" href="images/portfolio/full.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                            <a class="preview" href="<c:url value="/resources/images/portfolio/full.jpg" />"rel="prettyPhoto"><i class="fa fa-eye"></i></a>
                         </div>
                     </div>
                 </div><!--/.portfolio-item-->
 
                 <div class="portfolio-item corporate portfolio">
                     <div class="portfolio-item-inner">
-                        <img class="img-responsive" src="images/portfolio/02.jpg" alt="">
+                        <img class="img-responsive"  src="<c:url value="/resources/images/portfolio/02.jpg" />"alt="">
                         <div class="portfolio-info">
                             <h3>Portfolio Item 2</h3>
                             Lorem Ipsum Dolor Sit
-                            <a class="preview" href="images/portfolio/full.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                            <a class="preview" href="<c:url value="/resources/images/portfolio/full.jpg" />" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
                         </div>
                     </div>
                 </div><!--/.portfolio-item-->
 
                 <div class="portfolio-item creative">
                     <div class="portfolio-item-inner">
-                        <img class="img-responsive" src="images/portfolio/03.jpg" alt="">
+                        <img class="img-responsive" src="<c:url value="/resources/images/portfolio/03.jpg" />" alt="">
                         <div class="portfolio-info">
                             <h3>Portfolio Item 3</h3>
                             Lorem Ipsum Dolor Sit
-                            <a class="preview" href="images/portfolio/full.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                            <a class="preview" href="<c:url value="/resources/images/portfolio/full.jpg" />" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
                         </div>
                     </div>
                 </div><!--/.portfolio-item-->
 
                 <div class="portfolio-item corporate">
                     <div class="portfolio-item-inner">
-                        <img class="img-responsive" src="images/portfolio/04.jpg" alt="">
+                        <img class="img-responsive" src="<c:url value="/resources/images/portfolio/04.jpg" />" alt="">
                         <div class="portfolio-info">
                             <h3>Portfolio Item 4</h3>
                             Lorem Ipsum Dolor Sit
-                            <a class="preview" href="images/portfolio/full.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                            <a class="preview" href="<c:url value="/resources/images/portfolio/full.jpg" />" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
                         </div>
                     </div>
                 </div><!--/.portfolio-item-->
 
                 <div class="portfolio-item creative portfolio">
                     <div class="portfolio-item-inner">
-                        <img class="img-responsive" src="images/portfolio/05.jpg" alt="">
+                        <img class="img-responsive" src="<c:url value="/resources/images/portfolio/05.jpg" />" alt="">
                         <div class="portfolio-info">
                             <h3>Portfolio Item 5</h3>
                             Lorem Ipsum Dolor Sit
-                            <a class="preview" href="images/portfolio/full.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                            <a class="preview" href="<c:url value="/resources/images/portfolio/full.jpg" />" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
                         </div>
                     </div>
                 </div><!--/.portfolio-item-->
 
                 <div class="portfolio-item corporate">
                     <div class="portfolio-item-inner">
-                        <img class="img-responsive" src="images/portfolio/06.jpg" alt="">
+                        <img class="img-responsive" src="<c:url value="/resources/images/portfolio/06.jpg" />" alt="">
                         <div class="portfolio-info">
                             <h3>Portfolio Item 5</h3>
                             Lorem Ipsum Dolor Sit
-                            <a class="preview" href="images/portfolio/full.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                            <a class="preview" href="<c:url value="/resources/images/portfolio/full.jpg" />" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
                         </div>
                     </div>
                 </div><!--/.portfolio-item-->
 
                 <div class="portfolio-item creative portfolio">
                     <div class="portfolio-item-inner">
-                        <img class="img-responsive" src="images/portfolio/07.jpg" alt="">
+                        <img class="img-responsive" src="<c:url value="/resources/images/portfolio/07.jpg" />" alt="">
                         <div class="portfolio-info">
                             <h3>Portfolio Item 7</h3>
                             Lorem Ipsum Dolor Sit
-                            <a class="preview" href="images/portfolio/full.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                            <a class="preview" href="<c:url value="/resources/images/portfolio/full.jpg" />" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
                         </div>
                     </div>
                 </div><!--/.portfolio-item-->
 
                 <div class="portfolio-item corporate">
                     <div class="portfolio-item-inner">
-                        <img class="img-responsive" src="images/portfolio/08.jpg" alt="">
+                        <img class="img-responsive" src="<c:url value="/resources/images/portfolio/08.jpg" />" alt="">
                         <div class="portfolio-info">
                             <h3>Portfolio Item 8</h3>
                             Lorem Ipsum Dolor Sit
-                            <a class="preview" href="images/portfolio/full.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                            <a class="preview" href="<c:url value="/resources/images/portfolio/full.jpg" />" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
                         </div>
                     </div>
                 </div><!--/.portfolio-item-->
@@ -495,7 +513,7 @@
                 <div class="col-sm-6 col-md-3">
                     <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
                         <div class="team-img">
-                            <img class="img-responsive" src="images/team/01.jpg" alt="">
+                            <img class="img-responsive" src="<c:url value="/resources/images//team/01.jpg" />" alt="">
                         </div>
                         <div class="team-info">
                             <h3>Bin Burhan</h3>
@@ -513,7 +531,7 @@
                 <div class="col-sm-6 col-md-3">
                     <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="100ms">
                         <div class="team-img">
-                            <img class="img-responsive" src="images/team/02.jpg" alt="">
+                            <img class="img-responsive" src="<c:url value="/resources/images/team/02.jpg" />" alt="">
                         </div>
                         <div class="team-info">
                             <h3>Jane Man</h3>
@@ -531,7 +549,7 @@
                 <div class="col-sm-6 col-md-3">
                     <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="200ms">
                         <div class="team-img">
-                            <img class="img-responsive" src="images/team/03.jpg" alt="">
+                            <img class="img-responsive" src="<c:url value="/resources/images/team/03.jpg" />" alt="">
                         </div>
                         <div class="team-info">
                             <h3>Pahlwan</h3>
@@ -549,7 +567,7 @@
                 <div class="col-sm-6 col-md-3">
                     <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="300ms">
                         <div class="team-img">
-                            <img class="img-responsive" src="images/team/04.jpg" alt="">
+                            <img class="img-responsive" src="<c:url value="/resources/images/team/04.jpg" />" alt="">
                         </div>
                         <div class="team-info">
                             <h3>Nasir uddin</h3>
@@ -844,13 +862,13 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
                             <div class="item active">
-                                <p><img class="img-circle img-thumbnail" src="images/testimonial/01.jpg" alt=""></p>
+                                <p><img class="img-circle img-thumbnail" src="<c:url value="/resources/images/testimonial/01.jpg" />" alt=""></p>
                                 <h4>Louise S. Morgan</h4>
                                 <small>Treatment, storage, and disposal (TSD) worker</small>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut et dolore magna aliqua. Ut enim ad minim veniam</p>
                             </div>
                             <div class="item">
-                                <p><img class="img-circle img-thumbnail" src="images/testimonial/01.jpg" alt=""></p>
+                                <p><img class="img-circle img-thumbnail" src="<c:url value="/resources/images/testimonial/01.jpg" />" alt=""></p>
                                 <h4>Louise S. Morgan</h4>
                                 <small>Treatment, storage, and disposal (TSD) worker</small>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut et dolore magna aliqua. Ut enim ad minim veniam</p>
@@ -887,7 +905,7 @@
                         <article>
                             <header class="entry-header">
                                 <div class="entry-thumbnail">
-                                    <img class="img-responsive" src="images/blog/01.jpg" alt="">
+                                    <img class="img-responsive" src="<c:url value="/resources/images/blog/01.jpg" />" alt="">
                                     <span class="post-format post-format-video"><i class="fa fa-film"></i></span>
                                 </div>
                                 <div class="entry-date">25 November 2014</div>
@@ -911,7 +929,7 @@
                     <div class="blog-post blog-media wow fadeInRight" data-wow-duration="300ms" data-wow-delay="100ms">
                         <article class="media clearfix">
                             <div class="entry-thumbnail pull-left">
-                                <img class="img-responsive" src="images/blog/02.jpg" alt="">
+                                <img class="img-responsive" src="<c:url value="/resources/images/blog/02.jpg" />" alt="">
                                 <span class="post-format post-format-gallery"><i class="fa fa-image"></i></span>
                             </div>
                             <div class="media-body">
@@ -936,7 +954,7 @@
                     <div class="blog-post blog-media wow fadeInRight" data-wow-duration="300ms" data-wow-delay="200ms">
                         <article class="media clearfix">
                             <div class="entry-thumbnail pull-left">
-                                <img class="img-responsive" src="images/blog/03.jpg" alt="">
+                                <img class="img-responsive" src="<c:url value="/resources/images/blog/03.jpg" />" alt="">
                                 <span class="post-format post-format-audio"><i class="fa fa-music"></i></span>
                             </div>
                             <div class="media-body">
@@ -1039,16 +1057,16 @@
         </div>
     </footer><!--/#footer-->
 
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/mousescroll.js"></script>
-    <script src="js/smoothscroll.js"></script>
-    <script src="js/jquery.prettyPhoto.js"></script>
-    <script src="js/jquery.isotope.min.js"></script>
-    <script src="js/jquery.inview.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="<c:url value="/resources/js/jquery.js" />"></script>
+    <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
+<!--     <script src="http://maps.google.com/maps/api/js?sensor=true"></script> -->
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRuT8SSCSaX_DDomcusvhk7-quXr0TKg4&callback=initMap"type="text/javascript"></script>
+    <script src="<c:url value="/resources/js/owl.carousel.min.js" />"></script>
+    <script  src="<c:url value="/resources/js/mousescroll.js" />"></script>
+    <script src="<c:url value="/resources/js/jquery.prettyPhoto.js" />"></script>
+    <script src="<c:url value="/resources/js/jquery.isotope.min.js" />"></script>
+    <script src="<c:url value="/resources/js/jquery.inview.min.js" />"></script>
+    <script src="<c:url value="/resources/js/wow.min.js" />"></script>
+    <script src="<c:url value="/resources/js/main.js" />"></script>
 </body>
 </html>

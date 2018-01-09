@@ -1,107 +1,71 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv='cache-control' content='no-cache'>
-	<meta http-equiv='expires' content='0'>
-	<meta http-equiv='pragma' content='no-cache'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Effective Wait</title>
 	<!-- core CSS -->
-    <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
-    <link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
-    <link href="<c:url value="/resources/css/responsive.css" />" rel="stylesheet">
-    <link href="<c:url value="/resources/css/custom.css" />" rel="stylesheet">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.css" rel="stylesheet"/>
-
-    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/owl.carousel.css" rel="stylesheet">
+    <link href="css/owl.transitions.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
     
-
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
     <style>
-
+     .navbar-nav>li>a { padding-top: 1px; padding-bottom: 1px; }
+     .my-table {
+		    border-collapse: collapse;
+		    width: 100%;
+		}
+		
+		.my-table tbody tr:nth-child(even){background-color: #f2f2f2}
+		
+		.my-table tbody 	tr:hover {background-color: #ffcc99;}
+		
+		.my-table th, td {
+		    border-bottom: 1px solid #ddd;
+		}
+		
+		.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
+.autocomplete-suggestion { padding: 5px 5px; white-space: nowrap; overflow: hidden; font-size:22px}
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: bold; color: #3399FF; }
 
 
      </style>
      <script>
-     var selectedPhoneNumber = '';
-		$(document).ready(function(){
-			 $( "#phonentag" ).autocomplete({
-				 minLength: 1,
-				 source: function (request, response) {
-	                    $.ajax({
-	                        type: "GET",
-	                        url: "/productiveWaitWeb/getVisitorByPhone",
-	                        dataType: "json",
-	                        data: {
-	                            term: request.term
-	                        },
-	                        error: function (xhr, textStatus, errorThrown) {
-	                            alert('Error: ' + xhr.responseText);
-	                        },
-	                        success: function (data) {
-	                            response($.map(data, function (item) {
-	                                return {
-	                                    label: item.phoneNumber + ' ' + item.firstName,
-	                                    value: item.firstName + ' ' +  item.lastName   
-	                                }
-	                            }));
-	                        }
-	                        
-	                    });
-	                },
-			    select: function (event, ui) { 
-			    			var selectedLabel = ui.item.label;
-			    			selectedPhoneNumber = selectedLabel.split(' ')[0];
-			    			$('#addExistingVisitor').prop('disabled', false);
-		                 return true;
-         		    }
-			 });
-	 	 }); 
+     $(document).ready(function(){
+    	    alert('ini autocomplete');
+	     $( "#phonentag" ).autocomplete({
+	    	  source: [ "c++", "java", "php", "coldfusion", "javascript", "asp", "ruby" ]
+	    		});
+  		});  
      
 	     $(document).ready(function(){
-// 	    	    $("#visitorQueue-tbody").sortable();
-// 	    	    $("#visitorQueue-tbody").disableSelection();
-	    	    	    
-	    	    $('#visitorQueue-tbody').sortable({
-	    	        helper: fixWidthHelper,
-	    	        update: function( event, ui ) {
-	    	            $(this).children().each(function(index) {
-	    	        			$(this).find('td').first().html(index + 1)
-	    	            });
-	    	          }
-	    	    }).disableSelection();
-	    	        
-	    	    function fixWidthHelper(e, ui) {
-	    	        ui.children().each(function() {
-	    	            $(this).width($(this).width());
-	    	        });
-	    	        return ui;
-	    	    }    
-	    	    
 	    	    $("#addVisitor").click(function(){
-	    	        //$.get("/productiveWaitWeb/addVisitor");
+	    	        alert('First test');
+	    	        $.get("/productiveWaitWeb/searchByPhone");
 	    	    });
-	    	    $("#addExistingVisitor").click(function(){
-	    	    	    var rowCount = $('#visitorQueue >tbody >tr').length + 1;
-	    	        var firstName = $("#phonentag").val().split(' ')[0];
-	    	        var lastName = $("#phonentag").val().split(' ')[1];
- 	            var markup = "<tr><td>" + rowCount +"</td><td>" + firstName + "</td><td>" + lastName + "</td><td>" + selectedPhoneNumber + "</td></tr>";
- 	            $("#visitorQueue").append(markup);
-	    	        $.get("/productiveWaitWeb/addExistingVisitor?phoneNumber=" + selectedPhoneNumber + "&firstName=" + firstName + "&lastName=" + lastName);
-	    	    });
-	    	 }); 
-	     
+	    	}); 
      </script>
 </head><!--/head-->
 
@@ -142,12 +106,13 @@
                     <div class="col-sm-6">
                         <div class="contact-form">
                             <h3>Search Visitor</h3>
-<%--                             <form name="contact-form" method="post" action="/productiveWaitWeb/getVisitorByPhone"> --%>
+                            <form name="contact-form" method="post" action="/productiveWaitWeb/getVisitorByPhone">
                                 <div class="form-group row">
-                                      <div class="col-xs-6"><input id="phonentag" type="text" name="phonenumber" class="form-control autocomplete" placeholder="Search by Phone Number" required></div>
-                                      <div class="col-xs-4"><button id="addExistingVisitor"type="submit" class="btn btn-primary" disabled>Add to Queue</button></div>
+                                      <div class="col-xs-6"><input id="phonentag" type="text" name="phonenumber" class="form-control,ui-widget" placeholder="Phone Number" required></div>
+                                      <div class="col-xs-4"><button type="submit" class="btn btn-primary">Search</button></div>
                                 </div>
-<%--                             </form> --%>
+                                
+                            </form>
                             <h3>Add Visitor</h3>
                              <form:form method = "POST" action = "/productiveWaitWeb/addVisitor" modelAttribute="visitor">
                              	<div class="form-group row">
@@ -480,6 +445,7 @@
 							 		 <div class="col-xs-4"><button id="resetVisitor" type="submit" class="btn btn-primary">Reset</button></div>   
                                     	 <div class="col-xs-4"><button id="addVisitor" type="submit" class="btn btn-success">Add Visitor</button></div>
                                  </div> 
+								
                              </form:form>
                         </div>
              		</div>
@@ -487,32 +453,27 @@
 	                     <h3>Active Queue</h3>
 	                     <div class="container-fluid">      
 <!-- 							  <table class="table table-hover table-condensed table-responsive"> -->
-							<table id="visitorQueue" class="my-table">
+							<table class="my-table">
 							    <thead>
 							      <tr>
-							        <th>S.No.</th>
 							        <th>Firstname</th>
 							        <th>Lastname</th>
 							        <th>Phone #</th>
-							        <th>Action</th>
 							        
 							      </tr>
 							    </thead>
-							    <tbody id="visitorQueue-tbody">
+							    <tbody>
 							      <tr>
-							      	<td>1</td>
 							        <td>John</td>
 							        <td>Doe</td>
 							        <td>9085876339</td>
 							      </tr>
 							      <tr>
-							      	<td>2</td>
 							        <td>Mary</td>
 							        <td>Moe</td>
 							        <td>7326586109</td>
 							      </tr>
 							      <tr>
-							      	<td>3</td>
 							        <td>July</td>
 							        <td>Dooley</td>
 							        <td>9085876338</td>
