@@ -13,7 +13,14 @@ public class Visitor {
 	private String phoneNumber;
 	private int accountId;
 	private String email;
+	private int visitorQueueIndex;
 	
+	public int getVisitorQueueIndex() {
+		return visitorQueueIndex;
+	}
+	public void setVisitorQueueIndex(int visitorQueueIndex) {
+		this.visitorQueueIndex = visitorQueueIndex;
+	}
 	public String getEmail() {
 		return email;
 	}

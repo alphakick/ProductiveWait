@@ -21,7 +21,7 @@ public class UserDaoImpl implements UserDao{
 		try {
 		props = new Properties();
 		Class.forName("com.mysql.jdbc.Driver");
-		FileInputStream in = new FileInputStream("/Users/sumeetkhurana/eclipse-workspace/productiveWaitCore/src/main/resources/db.properties");
+		FileInputStream in = new FileInputStream("/Users/sumeetkhurana/git/LocalProductiveWaitRepository/productiveWaitCore/src/main/resources/db.properties");
 		props.load(in);
 		in.close();
 		}catch(IOException | ClassNotFoundException e) {

@@ -23,7 +23,7 @@ public class PlanDaoImpl implements PlanDao{
 	static {
 		try {
 		props = new Properties();
-		FileInputStream in = new FileInputStream("/Users/sumeetkhurana/projects/src/main/resources/db.properties");
+		FileInputStream in = new FileInputStream("/Users/sumeetkhurana/git/LocalProductiveWaitRepository/productiveWaitCore/src/main/resources/db.properties");
 		props.load(in);
 		in.close();
 		}catch(IOException e) {

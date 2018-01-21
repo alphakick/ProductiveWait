@@ -21,19 +21,63 @@ public class VisitorDaoImplTest {
 	@Test
 	public void testAddVisitor() throws SQLException, ClassNotFoundException {
 		VisitorDaoImpl visitorDaoImpl = new VisitorDaoImpl();
-		Visitor visitor = new Visitor();
+/*		Visitor visitor = new Visitor();
 		visitor.setAccountId(1);
-		visitor.setFirstName("visitor_FN");
-		visitor.setLastName("visitor_LN");
-		visitor.setAddressLine1("visitor_adl_1");
-		visitor.setAddressLine2("visitor_adl_2");
-		visitor.setAddressLine3("visitor_adl_3");
+		visitor.setFirstName("Sumeet");
+		visitor.setLastName("Khurana");
+		visitor.setAddressLine1("2353 Berkshire Lane");
+		visitor.setAddressLine2("");
+		visitor.setAddressLine3("");
 		visitor.setCity("North Brunswick");
 		visitor.setState("NJ");
 		visitor.setCountry("USA");
 		visitor.setZip("08902");
-		visitor.setPhoneNumber("1234567890");
-		visitor.setEmail("test123@yahoo.com");
+		visitor.setPhoneNumber("9085876339");
+		visitor.setEmail("khurana26@yahoo.com");*/
+		
+	/*	Visitor visitor = new Visitor();
+		visitor.setAccountId(1);
+		visitor.setFirstName("Kameshwari");
+		visitor.setLastName("Bulusu");
+		visitor.setAddressLine1("2353 Berkshire Lane");
+		visitor.setAddressLine2("");
+		visitor.setAddressLine3("");
+		visitor.setCity("North Brunswick");
+		visitor.setState("NJ");
+		visitor.setCountry("USA");
+		visitor.setZip("08902");
+		visitor.setPhoneNumber("9085876338");
+		visitor.setEmail("kams.bulusu@gmail.com");*/
+		
+		
+		Visitor visitor = new Visitor();
+		visitor.setAccountId(1);
+		visitor.setFirstName("Yashvi");
+		visitor.setLastName("Khurana");
+		visitor.setAddressLine1("2353 Berkshire Lane");
+		visitor.setAddressLine2("");
+		visitor.setAddressLine3("");
+		visitor.setCity("North Brunswick");
+		visitor.setState("NJ");
+		visitor.setCountry("USA");
+		visitor.setZip("08902");
+		visitor.setPhoneNumber("7326586109");
+		visitor.setEmail("kams_bulusu@yahoo.com");
+		
+		
+/*		Visitor visitor = new Visitor();
+		visitor.setAccountId(1);
+		visitor.setFirstName("Bluey");
+		visitor.setLastName("Khurana");
+		visitor.setAddressLine1("2353 Berkshire Lane");
+		visitor.setAddressLine2("");
+		visitor.setAddressLine3("");
+		visitor.setCity("North Brunswick");
+		visitor.setState("NJ");
+		visitor.setCountry("USA");
+		visitor.setZip("08902");
+		visitor.setPhoneNumber("2016476660");
+		visitor.setEmail("khurana26@gmail.com");*/
 		visitorDaoImpl.addVisitor(visitor);
 	}
 	

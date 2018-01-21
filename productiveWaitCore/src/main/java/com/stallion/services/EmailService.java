@@ -25,7 +25,8 @@ public class EmailService {
 		props = new Properties();
 		FileInputStream in;
 		try {
-			in = new FileInputStream("/Users/sumeetkhurana/eclipse-workspace/productiveWaitCore/src/main/resources/email.properties");
+			in = new FileInputStream("/Users/sumeetkhurana/git/LocalProductiveWaitRepository/productiveWaitCore/src/main/resources/email.properties");
+			
 			props.load(in);
 			in.close();
 		} catch (IOException e) {
