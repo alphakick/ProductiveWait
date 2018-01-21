@@ -36,29 +36,9 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>java</name>
+			<name>productiveWaitCore-java</name>
 			<type>2</type>
-			<location>/Users/sumeetkhurana/eclipse-workspace/productiveWaitCore/src/main/java</location>
-		</link>
-		<link>
-			<name>productiveWait</name>
-			<type>2</type>
-			<location>/Users/sumeetkhurana/eclipse-workspace/productiveWait</location>
-		</link>
-		<link>
-			<name>productiveWait-src</name>
-			<type>2</type>
-			<location>/Users/sumeetkhurana/projects/src</location>
-		</link>
-		<link>
-			<name>productiveWaitCore</name>
-			<type>2</type>
-			<location>/Users/sumeetkhurana/eclipse-workspace/productiveWaitCore</location>
-		</link>
-		<link>
-			<name>projects</name>
-			<type>2</type>
-			<location>/Users/sumeetkhurana/projects</location>
+			<location>/Users/sumeetkhurana/git/LocalProductiveWaitRepository/productiveWaitCore/src/main/java</location>
 		</link>
 	</linkedResources>
 </projectDescription>
